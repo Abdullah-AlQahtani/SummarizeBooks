@@ -1,0 +1,2 @@
+module AudioSummaryHelper
+end

@@ -3,6 +3,7 @@ class AudioSummaryController < ApplicationController
   end
 
   def new
+    @Audio = 
   end
 
   def show

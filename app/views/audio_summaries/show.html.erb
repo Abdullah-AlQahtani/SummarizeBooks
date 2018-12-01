@@ -1,2 +1,8 @@
 <h1>AudioSummary#show</h1>
 <p>Find me in app/views/audio_summary/show.html.erb</p>
+<%= @Audio_Summary %>
+<h4>all summay</h4>
+<%@audio_summary do|a| %>
+
+<%= a.audio %>
+<% end %>

@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   mount_uploader :audio, AudioUploader
+  has_many :books
+  has_many :audio_summaries
 end

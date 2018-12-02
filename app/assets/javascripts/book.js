@@ -16,10 +16,7 @@ function getBook(bookName) {
       // debugger
       for (book of data.items) {
         const html =
-          // <img src=${book.volumeInfo.imageLinks.thumbnail}/>
-          // <li>${book.volumeInfo.title}</li>
           `
-
         <div id="main">
           
         <a href="/books/${book.volumeInfo.title}">

@@ -10,6 +10,7 @@ body.books {
   background-size: cover;
   display: -webkit-inline-box;
 }
+
 div#show-book {
   text-align: -webkit-left;
   background-color: floralwhite;
@@ -27,16 +28,13 @@ div#main {
     display: flex;
     border: 1px solid black;
     margin-bottom: 15px;
-
 }
-
 
 div#BookName {
     margin-top: 5px;
     // border: 1px solid black;
     padding: 0px 10px;
 }
-
 
 div#image {
     border: 1px solid black;

@@ -1,8 +1,8 @@
 // Place all the styles related to the audioSummary controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  background-image: url("books-with-headphones--audiobook-concept--3d-rendering-isolated-on-white-background-921302008-5afc6c78c5542e00365ab645.jpg");
+body.audio_summaries {
+  background-image: url("art-books-books-with-headphones--audiobook-concept--3d-rendering-isolated-on-white-background-921302008-5afc6c78c5542e00365ab645.jpg.png");
   background-repeat: no-repeat, repeat;
   background-size: cover;
   display: -webkit-inline-box;
@@ -13,6 +13,9 @@ nav {
   padding: 58px;
   border: solid;
   text-align: center;
+  left: 472px;
+  top: 161px;
+  position: absolute;
 }
 button {
   background-color: floralwhite;

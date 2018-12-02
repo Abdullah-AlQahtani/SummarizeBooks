@@ -1,3 +1,4 @@
+
 <%# <% @audio_summaries.each do |audio_summary|%>
 <%# <%= audio_summary.audio %>
   <%# <% end %> 
@@ -23,13 +24,15 @@ const recordAudio = () =>
       new Promise(resolve => {
         mediaRecorder.addEventListener("stop", () => {
           const audioBlob = new Blob(audioChunks);
+          const formData = new FormData();
+          formData.append('audio', audioBlob)
           <%# fetch("/audio_summaries", {
               method: "POST",
               headers: {
                   "Content-Type": "multipart/form-data",
                   Accept: "application/json"
               },
-              body: audioBlob
+              body: formData
           }) %>
           const audioUrl = URL.createObjectURL(audioBlob);
           const audio = new Audio(audioUrl);
@@ -60,5 +63,6 @@ const playAudio = () => {
   }
 };
 </script>
+
 
 

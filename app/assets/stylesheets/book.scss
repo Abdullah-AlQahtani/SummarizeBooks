@@ -4,9 +4,21 @@
 // image_tag {
 //   background-image: -moz-element();
 // }
-body {
+body.books {
   background-image: url("art-books-A2.png");
   background-repeat: no-repeat, repeat;
   background-size: cover;
   display: -webkit-inline-box;
+}
+div#show-book {
+  text-align: -webkit-left;
+  background-color: floralwhite;
+  font-size: 15px;
+  position: absolute;
+  left: 22px;
+  top: 72px;
+
+  display: grid;
+  font-style: oblique;
+  font-weight: 700;
 }

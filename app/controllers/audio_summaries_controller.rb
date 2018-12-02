@@ -1,4 +1,6 @@
 class AudioSummariesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     @audio_summaries = AudioSummary.all
   end
@@ -14,5 +16,6 @@ class AudioSummariesController < ApplicationController
   end
 
   def create
+    byebug
   end
 end

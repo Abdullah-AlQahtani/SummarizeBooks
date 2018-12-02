@@ -2,9 +2,10 @@
 <%# <%= audio_summary.audio %>
   <%# <% end %> 
 <%# <h1>hello</h1> %> 
-
+<nav>
 <button onclick="recordStop()" id="record-stop-button">Record</button>
 <button onclick="playAudio()" disabled id="play-audio-button">Play</button>
+</nav>
 <script>
 const recordAudio = () =>
   new Promise(async resolve => {
@@ -19,6 +20,14 @@ const recordAudio = () =>
       new Promise(resolve => {
         mediaRecorder.addEventListener("stop", () => {
           const audioBlob = new Blob(audioChunks);
+          <%# fetch("/audio_summaries", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "multipart/form-data",
+                  Accept: "application/json"
+              },
+              body: audioBlob
+          }) %>
           const audioUrl = URL.createObjectURL(audioBlob);
           const audio = new Audio(audioUrl);
           const play = () => audio.play();

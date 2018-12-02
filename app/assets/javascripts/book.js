@@ -15,7 +15,31 @@ function getBook(bookName) {
         const showBookDiv = document.querySelector("#show-book");
         // debugger
         for ( book of data.items) {
-        const html = `<li>${book.volumeInfo.title}</li>`;
+        const html = 
+        // <img src=${book.volumeInfo.imageLinks.thumbnail}/>
+        // <li>${book.volumeInfo.title}</li>
+        `
+
+        <div id="main">
+          
+        <div id="image">
+          <div id="logo">
+            <img src=${book.volumeInfo.imageLinks.thumbnail}/>
+          </div>
+        </div>
+
+        <div id="BookName">
+        <div> <h4>${book.volumeInfo.title}</h4></div>
+        <h5>Author: ${book.volumeInfo.authors}</h5>
+        <br>
+            <strong> Description: </strong>
+            <p> ${book.volumeInfo.description} </p>
+        <h5>Publisher: ${book.volumeInfo.publisher}</h5>
+
+        </div>
+      <br>
+
+        `;
         showBookDiv.innerHTML += html;
         }  
     });

@@ -36,7 +36,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem "devise"
 gem 'cloudinary'
 gem 'rest-client', '~> 2.0'
-
+gem "httparty"
 gem 'carrierwave'
 gem 'materialize-sass', '~> 1.0.0'
 group :development, :test do

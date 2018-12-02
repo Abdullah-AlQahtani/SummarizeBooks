@@ -2,8 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background-color: cornsilk;
+  background-image: url("books-with-headphones--audiobook-concept--3d-rendering-isolated-on-white-background-921302008-5afc6c78c5542e00365ab645.jpg");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  display: -webkit-inline-box;
 }
+
 nav {
-  background-color: #413d399a;
+  background-color: #f8f8f89a;
+  padding: 58px;
+  border: solid;
+  text-align: center;
+}
+button {
+  background-color: floralwhite;
+  padding: 13px;
 }

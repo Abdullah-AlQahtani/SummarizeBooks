@@ -1,11 +1,12 @@
 <h2><%= @book.bookName %></h2>
 
-<div id="container">
+<div class="image">
 <img src="<%= @book.image %>"/>
-<div class="button">
-<button onclick="recordStop()" id="record-stop-button">Record</button>
-<button onclick="playAudio()" disabled id="play-audio-button">Play</button>
 </div>
+<div class="summarize">
+<h5>Click on the record to summarize your own vertion fo this book</h5>
+<button  onclick="recordStop()" id="record-stop-button">Record</button>
+<button onclick="playAudio()" disabled id="play-audio-button">Play</button>
 </div>
 
 <div>

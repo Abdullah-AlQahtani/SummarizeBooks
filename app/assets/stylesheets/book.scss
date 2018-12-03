@@ -57,6 +57,21 @@ div#container {
   text-align: center;
 }
 
+.image {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
 .summarize {
-padding: 1%;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1%;
+}
+.row {
+  text-align: center;
+  padding: 104px;
+  border: double;
+  background-color: wheat;
 }

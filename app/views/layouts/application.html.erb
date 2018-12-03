@@ -8,13 +8,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-<<<<<<< HEAD
      <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
-  <body class="<%= params[:controller] %> <%= params[:action] %>">
+  
+  <body>
     <nav class="nav-extended">
       <div class="nav-wrapper">
         <% if user_signed_in? %>
@@ -32,27 +32,8 @@
     
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-=======
-    <script src=""></script>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-
-    <% if user_signed_in? %>
-    <%= link_to "Edit Logged In User", edit_user_registration_path %> 
-    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %> 
-    <%= link_to 'Delete Account', user_registration_path, method: :delete %>
-
-    <% else %>
-    <%= link_to "Sign Up", new_user_registration_path %>
-    <%= link_to 'Log In', new_user_session_path %> 
-
-    <% end %>
-
-  </head>
-  <body class="<%= params[:controller] %> <%= params[:action] %>">
- 
-   <script>
+<script>
       const recordAudio = () =>
         new Promise(async resolve => {
           const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -105,7 +86,6 @@
         }
       };
       </script>
->>>>>>> 0f3518af5fa3c27e9d8090d981fe1a91d8c49da2
 
     <%= yield %>
   </body>

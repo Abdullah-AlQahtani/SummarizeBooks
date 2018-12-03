@@ -57,11 +57,15 @@ div#container {
   text-align: center;
 }
 
-<<<<<<< HEAD
-.button {
-  padding: 1%;
-=======
+.image {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
 .summarize {
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 padding: 1%;
->>>>>>> ae34a284298d2c3af217a011a995a894139cc6b9
 }

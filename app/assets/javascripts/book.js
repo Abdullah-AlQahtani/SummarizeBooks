@@ -15,8 +15,7 @@ function getBook(bookName) {
       const showBookDiv = document.querySelector("#show-book");
       // debugger
       for (book of data.items) {
-        const html =
-          `
+        const html = `
         <div id="main">
           
         <a href="/books/${book.volumeInfo.title}">

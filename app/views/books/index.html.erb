@@ -3,6 +3,6 @@
 <ul>
 <% @books.each do |book| %>
   <li>
-    <%= link_to book.bookName, book %>
+    <%= link_to book.bookName, "/books/#{book.google_id}" %>
   </li>
 <% end %>

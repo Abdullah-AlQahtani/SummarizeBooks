@@ -7,24 +7,80 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <script src=""></script>
     <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p>
 
 
-<% if user_signed_in? %>
-<%= link_to "Edit Logged In User", edit_user_registration_path %> 
-<%= link_to 'Log Out', destroy_user_session_path, method: :delete %> 
-<%= link_to 'Delete Account', user_registration_path, method: :delete %>
+    <% if user_signed_in? %>
+    <%= link_to "Edit Logged In User", edit_user_registration_path %> 
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %> 
+    <%= link_to 'Delete Account', user_registration_path, method: :delete %>
 
-<% else %>
-<%= link_to "Sign Up", new_user_registration_path %>
-<%= link_to 'Log In', new_user_session_path %> 
+    <% else %>
+    <%= link_to "Sign Up", new_user_registration_path %>
+    <%= link_to 'Log In', new_user_session_path %> 
 
-<% end %>
+    <% end %>
+
   </head>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
   <body class="<%= params[:controller] %> <%= params[:action] %>">
  
+   <script>
+const recordAudio = () =>
+  new Promise(async resolve => {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const mediaRecorder = new MediaRecorder(stream);
+    const audioChunks = [];
+    mediaRecorder.addEventListener("dataavailable", event => {
+      audioChunks.push(event.data);
+    });
+    const start = () => mediaRecorder.start();
+    const stop = () =>
+      new Promise(resolve => {
+        mediaRecorder.addEventListener("stop", () => {
+          const audioBlob = new Blob(audioChunks);
+          const formData = new FormData();
+          formData.append('audio', audioBlob)
+          <%# fetch("/audio_summaries", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "multipart/form-data",
+                  Accept: "application/json"
+              },
+              body: formData
+          }) %>
+          const audioUrl = URL.createObjectURL(audioBlob);
+          const audio = new Audio(audioUrl);
+          const play = () => audio.play();
+          resolve({ audioBlob, audioUrl, play });
+        });
+        mediaRecorder.stop();
+      });
+    resolve({ start, stop });
+  });
+let recorder = null;
+let audio = null;
+const recordStop = async () => {
+  if (recorder) {
+    audio = await recorder.stop();
+    recorder = null;
+    document.querySelector("#record-stop-button").textContent = "Record";
+    document.querySelector("#play-audio-button").removeAttribute("disabled");
+  } else {
+    recorder = await recordAudio();
+    recorder.start();
+    document.querySelector("#record-stop-button").textContent = "Stop";
+  }
+};
+const playAudio = () => {
+  if (audio && typeof audio.play === "function") {
+    audio.play();
+  }
+};
+</script>
+
     <%= yield %>
   </body>
 </html>

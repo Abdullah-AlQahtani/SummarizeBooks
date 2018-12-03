@@ -1,4 +1,12 @@
 <h1><%= @book.bookName %></h1>
-<br>
+
+<div>
+<img src="<%= @book.image %>"/>
+<button onclick="recordStop()" id="record-stop-button">Record</button>
+<button onclick="playAudio()" disabled id="play-audio-button">Play</button>
+</div>
+
+<div>
 <p><%= @book.bookDescription %></p>
+</div>
 

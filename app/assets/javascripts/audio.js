@@ -10,19 +10,20 @@ const recordAudio = () =>
     const stop = () =>
       new Promise(resolve => {
         mediaRecorder.addEventListener("stop", () => {
-          const audioBlob = new Blob(audioChunks);
-          const json = {
-            audio: audioBlob,
-            google_id: window.location.pathname.replace("/books/", "")
-          };
-          const audioUrl = URL.createObjectURL(audioBlob);
-          const formData = new FormData();
-          //   formData.append("audio_summary", JSON.stringify(json));
-          formData.append("audio_summary[audio]", audioUrl);
+          const audioBlob = new Blob(audioChunks); // Creates a file
+          const audioUrl = URL.createObjectURL(audioBlob); // A url for the file
+          const formData = new FormData(); // Start of setting up params
+          formData.append("audio_summary[audio]", audioUrl); // Adding params
           formData.append(
             "audio_summary[google_id]",
             window.location.pathname.replace("/books/", "")
           );
+          // Send a POST request to /audio_summaries
+          // That will run audio_summaries#create
+          // It will receive two parameters (google_id and audio)
+          // It will add them both into the database
+          //   The audio will be uploaded automatically to Cloudinary (because of the uploader)
+          //   Cloudinary will give you back a URL that you can use to play the audio
           fetch("/audio_summaries", {
             method: "POST",
             headers: {

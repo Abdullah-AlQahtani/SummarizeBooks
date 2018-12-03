@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>SummarizeBook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-
-<% if user_signed_in? %>
-<div id ="signIn">
-<%= link_to "Edit Logged In User", edit_user_registration_path %> 
-<%= link_to 'Log Out', destroy_user_session_path, method: :delete %> 
-<%= link_to 'Delete Account', user_registration_path, method: :delete %>
-</div>
-<% else %>
-<div id="else">
-<%= link_to "Sign Up", new_user_registration_path %>
-<%= link_to 'Log In', new_user_session_path %> 
-</div>
-<% end %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
   <body class="<%= params[:controller] %> <%= params[:action] %>">
- 
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+        <% if user_signed_in? %>
+          <div id ="signIn">
+            <%= link_to "Edit Logged In User", edit_user_registration_path %> 
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete %> 
+            <%= link_to 'Delete Account', user_registration_path, method: :delete %>
+          </div>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+          <%= link_to 'Log In', new_user_session_path %> 
+        <% end %>
+      </div>
+    </nav>
+    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>

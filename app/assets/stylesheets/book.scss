@@ -5,19 +5,19 @@
 //   background-image: -moz-element();
 // }
 body.books {
-  background-image: url("art-books-A2.png");
+  background-image: image-url("art-books-A2.png");
   background-repeat: no-repeat, repeat;
   background-size: cover;
-  display: -webkit-inline-box;
+  //   display: -webkit-inline-box;
 }
-div#show-book {
-  text-align: -webkit-left;
-  background-color: floralwhite;
-  font-size: 15px;
-  position: absolute;
-  left: 22px;
-  top: 140px;
 
+div#show-book {
+  text-align: left;
+  border: 1px solid black;
+  font-size: 15px;
+  //   position: absolute;
+  //   left: 22px;
+  //   top: 140px;
   display: grid;
   font-style: oblique;
   font-weight: 700;

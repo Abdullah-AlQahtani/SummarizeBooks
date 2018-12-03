@@ -18,7 +18,7 @@ function getBook(bookName) {
         const html = `
         <div id="main">
           
-        <a href="/books/${book.volumeInfo.title}">
+        <a href="/books/${book.id}">
         <div id="image">
           <div id="logo">
             <img src=${book.volumeInfo.imageLinks.thumbnail}/>

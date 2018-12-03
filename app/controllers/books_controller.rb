@@ -4,7 +4,8 @@ class BooksController < ApplicationController
   end
 
   def show
-    book = Book.find_by(bookName: params[:id])
+    book = Book.find_by(google_id: params[:id])
+    @audio_summary = AudioSummary.new
     if book
       @book = book
     else
@@ -13,6 +14,7 @@ class BooksController < ApplicationController
       response = HTTParty.get url
       data = response["items"].first
       @book = Book.create(
+        google_id: params[:id],
         bookName: data["volumeInfo"]["title"],
         bookAuther: data["volumeInfo"]["authors"].join(", "),
         bookDescription: data["volumeInfo"]["description"],

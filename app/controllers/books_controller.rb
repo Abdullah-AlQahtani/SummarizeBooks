@@ -31,6 +31,20 @@ class BooksController < ApplicationController
   end
 end
 
+
+def save_file
+  audio = params[:audio]
+  save_path = Rails.root.join("book/#{audio.original_filename}")
+
+    audio.rewind
+    # Open and write the file to file system.
+  File.open(save_path, 'wb') do |f|
+    f.write audio.read
+  end
+
+  render :text=> 'hi'
+end
+
 # private
 
 #   def book_params

@@ -16,6 +16,7 @@ class AudioSummariesController < ApplicationController
   end
 
   def create
-    byebug
+    @audio_summary = AudioSummary.new(Audio_Summary)
   end
+
 end

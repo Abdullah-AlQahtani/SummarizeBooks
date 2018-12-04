@@ -38,6 +38,7 @@ gem 'cloudinary'
 gem 'rest-client', '~> 2.0'
 gem "httparty"
 gem 'carrierwave'
+gem 'ratyrate'
 # gem 'materialize-sass', '~> 1.0.0'
 # gem 'material_icons' 
 group :development, :test do

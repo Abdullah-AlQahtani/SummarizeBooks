@@ -16,6 +16,14 @@ class AudioSummariesController < ApplicationController
   end
 
   def create
-    # @audio_summary = AudioSummary.new(Audio_Summary)
+    @audio_summary = AudioSummary.new(audio_params)
+    @audio_summary.save
+    render json: @audio_summary
+  end
+
+  private
+
+  def audio_params
+    params.require(:audio_summary).permit(:audio)
   end
 end

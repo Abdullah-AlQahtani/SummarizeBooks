@@ -44,11 +44,13 @@ function getBook(bookName) {
 
 window.onload = function() {
   const form = document.querySelector("form");
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    const input = document.querySelector("#textarea1");
+  if (form) {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const input = document.querySelector("#textarea1");
 
-    const bookName = input.value;
-    getBook(bookName);
-  });
+      const bookName = input.value;
+      getBook(bookName);
+    });
+  }
 };

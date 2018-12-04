@@ -1,4 +1,4 @@
-<h2><%= @book.bookName %></h2>
+<h3><%= @book.bookName %></h3>
 
 <div class="image">
 <img src="<%= @book.image %>"/>
@@ -10,14 +10,21 @@
 </div>
 
 <div>
-<p>Authors : <%= @book.bookAuther %></p>
+<p><strong>Authors :</strong> <%= @book.bookAuther %></p>
 </div>
 
 <div>
-    <p>Publish Year: <%= @book.bookYear %></p>
+    <p><strong>Publish Year:</strong> <%= @book.bookYear %></p>
 </div>
 
 <div>
 <p><%= @book.bookDescription %></p>
 </div>
+<div>
+<% @audio_summaries.each do |a| %>
+    <%= audio_tag a.audio, controls: true %>
 
+<% end %>
+ Rating  : <%= rating_for @audio_summary, 'audio', star: 10 , disable_after_rate: true%>  
+
+</div>

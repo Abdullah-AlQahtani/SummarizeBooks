@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "pages#home"
+  post "/rate" => "rater#create", :as => "rate"
   # get 'audio_summary/index'
   # get 'audio_summary/new'
   # get 'audio_summary/show'
@@ -8,7 +10,6 @@ Rails.application.routes.draw do
   resources :audio_summaries, :books
   # get "book/index"
 
-  root "pages#home"
   # get 'book/new'
   # get 'book/edit'
   # get 'book/show'

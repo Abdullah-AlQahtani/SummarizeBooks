@@ -6,4 +6,5 @@ class User < ApplicationRecord
   mount_uploader :audio, AudioUploader
   has_many :books
   has_many :audio_summaries
+  ratyrate_rater
 end

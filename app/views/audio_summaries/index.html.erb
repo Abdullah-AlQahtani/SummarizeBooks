@@ -1,16 +1,25 @@
 
-<%# <% @audio_summaries.each do |audio_summary|%>
-<%# <%= audio_summary.audio %>
-  <%# <% end %> 
-<%# <h1>hello</h1> %> 
+<% @audio_summaries.each do |audio_summary|%>
+    <%= audio_summary.audio %>
+    
+
+<% end %> 
 
 
 
 <nav>
 <button onclick="recordStop()" id="record-stop-button">Record</button>
 <button onclick="playAudio()" disabled id="play-audio-button">Play</button>
+
 </nav>
-
-
+<%# 
+<h3>Stars raiting</h3>
+<div class= "stars" data-raiting="3">
+    <span class="star">&nbsp;</span>
+    <span class="star">&nbsp;</span>
+    <span class="star">&nbsp;</span>
+    <span class="star">&nbsp;</span>
+    <span class="star">&nbsp;</span>
+</div> %>
 
 

@@ -34,6 +34,7 @@ const recordAudio = () =>
           });
           const audio = new Audio(audioUrl);
           const play = () => audio.play();
+
           resolve({audioBlob, audioUrl, play});
         });
         mediaRecorder.stop();

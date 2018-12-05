@@ -36,7 +36,9 @@ const recordAudio = () =>
               Accept: "application/json"
             },
             body: formData
-          });
+          }).then(r => r.json()).then(data => {
+            location.reload();
+          })
           const audio = new Audio(audioUrl);
           const play = () => audio.play();
 

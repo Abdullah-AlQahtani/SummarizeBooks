@@ -17,6 +17,15 @@ class AudioSummariesController < ApplicationController
 
   def create
     @audio_summary = AudioSummary.new(audio_params)
+    @audio_summary.user_id = current_user.id
+    book = Book.find_by(google_id: params["audio_summary"]["book_id"])
+    @audio_summary.book_id = book.id
+
+    @audio_summary.valid?
+    puts "************ "
+    puts @audio_summary.errors.full_messages
+    puts "************ "
+
     @audio_summary.save
     render json: @audio_summary
   end
@@ -24,6 +33,6 @@ class AudioSummariesController < ApplicationController
   private
 
   def audio_params
-    params.require(:audio_summary).permit(:audio)
+    params.require(:audio_summary).permit(:audio, :book_id, :user_id)
   end
 end

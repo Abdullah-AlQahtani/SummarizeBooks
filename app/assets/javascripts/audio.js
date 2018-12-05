@@ -13,7 +13,12 @@ const recordAudio = () =>
           const audioBlob = new Blob(audioChunks); // Creates a file
           const audioUrl = URL.createObjectURL(audioBlob); // A url for the file
           const formData = new FormData(); // Start of setting up params
+
           formData.append("audio_summary[audio]", audioBlob); // Adding params
+          formData.append(
+            "audio_summary[book_id]",
+            window.location.pathname.replace("/books/", "")
+          ); // Adding params
           //   formData.append("audio_summary[google_id]", window.location.pathname.replace("/books/", "")
           //   );
           // Send a POST request to /audio_summaries - done √
@@ -63,6 +68,7 @@ const playAudio = () => {
 };
 
 function sendWaveToPost(blob) {
+  debugger;
   alert("in");
   var data = new FormData();
 

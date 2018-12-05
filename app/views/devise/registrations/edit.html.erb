@@ -3,7 +3,7 @@
 <% resource.audio_summaries.each do |summary| %>
   <p>
     <%= audio_tag summary.audio, controls: true %>
-    Book <%= link_to summary.book.bookName, "/books/#{summary.book.google_id}" %>
+    - Book Title:  <%= link_to summary.book.bookName, "/books/#{summary.book.google_id}" %>
   </p>
 <% end %>
 

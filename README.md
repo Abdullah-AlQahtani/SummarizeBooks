@@ -1,24 +1,9 @@
-# README
+# Books Summarize
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Book Summaries “Project Three
+    ”Working as a group for the third project of the Web Development
+    Immersive, we created a full-stack web application using Ruby on Rails,
+    PostgreSQL, HTML, CSS, JavaScript, AJAX and APIs that helped users
+    summarize books using their voices. A user can keep track of what books
+    they have had read, and add audio recordings to each book. They could also
+    search for books using the Google Books API.

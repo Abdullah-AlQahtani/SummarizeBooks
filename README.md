@@ -5,8 +5,9 @@ Working as a group for the third project of the Web Development Immersive, we cr
 ## Table of Contents
 
 * [Getting Started](#Getting)
-* [Getting Started](#API)
-* [Getting Started](#Credits)
+* [Web Technologies](#Web)
+* [API](#API)
+* [Credit](#Credit)
 
 
 
@@ -31,5 +32,5 @@ Working as a group for the third project of the Web Development Immersive, we cr
 
 ## Credit
 
-* Abdullah AlQahtani
-* Mohammed abdulqader
+* Abdullah AlQahtani - [Abdullah-AlQahtani](https://github.com/Abdullah-AlQahtani)
+* Mohammed abdulqader - [Triple0m](https://github.com/triple0m)

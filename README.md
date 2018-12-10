@@ -18,5 +18,5 @@ Working as a group for the third project of the Web DevelopmentImmersive, we cre
 
 ## Credit
 
-@Abdullah-AlQahtani
-@triple0m 
+Abdullah AlQahtani
+Mohammed abdulqader

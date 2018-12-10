@@ -35,5 +35,3 @@ Working as a group for the third project of the Web Development Immersive, we cr
 * Abdullah AlQahtani - [Abdullah-AlQahtani](https://github.com/Abdullah-AlQahtani)
 * Mohammed abdulqader - [Triple0m](https://github.com/triple0m)
 
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
-
